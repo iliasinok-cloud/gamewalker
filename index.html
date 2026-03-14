@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ant Unity Game</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Segoe UI", sans-serif;
+}
+
+body{
+
+background-image:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+
+background-size:cover;
+background-attachment:fixed;
+color:white;
+line-height:1.6;
+
+}
+
+.container{
+
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+
+}
+
+section{
+
+background:rgba(0,0,0,0.55);
+backdrop-filter: blur(8px);
+
+padding:40px;
+border-radius:15px;
+
+margin-bottom:40px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.6);
+
+}
+
+h1,h2{
+
+margin-bottom:20px;
+
+background:linear-gradient(90deg,#7CFFB2,#32a852);
+-webkit-background-clip:text;
+color:transparent;
+
+}
+
+h1{
+font-size:42px;
+}
+
+h2{
+font-size:36px;
+}
+
+p{
+font-size:19px;
+margin-bottom:15px;
+}
+
+.image{
+
+text-align:center;
+margin-top:20px;
+
+}
+
+.image img{
+
+max-width:100%;
+border-radius:10px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.8);
+
+}
+
+ul{
+
+margin-top:10px;
+padding-left:20px;
+font-size:18px;
+
+}
+
+li{
+
+margin-bottom:10px;
+
+}
+
+.icon{
+
+color:#7CFFB2;
+margin-right:10px;
+
+}
+
+.highlight{
+
+font-size:34px;
+
+}
+
+.heart{
+
+color:#ff4d6d;
+
+}
+
+footer{
+
+text-align:center;
+padding:20px;
+opacity:0.7;
+font-size:14px;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<section>
+
+<h1><i class="fa-solid fa-tree icon"></i>Сюжет та атмосфера</h1>
+
+<p>
+Світ людей зник під товщею гігантських джунглів. Залишки людської цивілізації —
+це іржаві консервні банки, що стали фортецями, та старі кросівки,
+які перетворилися на гори.
+</p>
+
+<p>
+Самотня мураха-скаут вирушає у небезпечну подорож крізь хащі,
+щоб відшукати розрізнені мурашники та об'єднати їх.
+Бо лише разом можна пережити «Велику Посуху» або напад хижаків.
+</p>
+
+<div class="image">
+<img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff">
+</div>
+
+</section>
+
+
+<section>
+
+<h2><i class="fa-solid fa-dice icon"></i>Механіка гри</h2>
+
+<p>
+Це ходілка (Roll & Move), посилена механікою
+<strong>Resource Management</strong> та <strong>Card Play</strong>.
+</p>
+
+<p>
+<strong>Ігрове поле:</strong> Звивиста стежка через джунглі,
+розділена на сектори (Покинутий сад, Затоплений гараж, Гнилий стовбур).
+</p>
+
+<p>
+<strong>Мета:</strong> Дійти до фінального Мурашника-Столиці,
+зібравши «Жетони Єдності».
+</p>
+
+</section>
+
+
+<section>
+
+<h2 class="highlight">
+<i class="fa-solid fa-people-group icon"></i>
+«В об'єднанні — сила»
+<span class="heart">❤</span>
+</h2>
+
+<p>
+Гравець не просто йде сам. Коли він проходить повз міні-поселення,
+він приєднує до себе мурах-помічників.
+</p>
+
+<ul>
+
+<li>
+<i class="fa-solid fa-ant icon"></i>
+Більше мурах у команді = легше проходити перешкоди
+(+1 до кидка кубика за союзника).
+</li>
+
+<li>
+<i class="fa-solid fa-handshake icon"></i>
+Кооператив: гравці можуть ділитися картками ресурсів,
+якщо знаходяться поруч.
+</li>
+
+</ul>
+
+</section>
+
+</div>
+
+</body>
+</html>
+
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<section style="max-width:1100px;margin:auto;padding:40px 20px;">
+
+<div class="swiper mySwiper">
+
+<div class="swiper-wrapper">
+
+<div class="swiper-slide">Порада: Збирай союзників щоб збільшити силу колонії</div>
+
+<div class="swiper-slide">Сектор: Покинутий сад — багато ресурсів але є хижаки</div>
+
+<div class="swiper-slide">Карта подій може змінити весь маршрут</div>
+
+<div class="swiper-slide">Фінальна ціль: Мурашник-Столиця</div>
+
+</div>
+
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-pagination"></div>
+
+</div>
+
+</section>
+
+<style>
+
+.swiper{
+margin-top:40px;
+background:rgba(0,0,0,0.6);
+border-radius:15px;
+padding:30px;
+}
+
+.swiper-slide{
+text-align:center;
+font-size:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+height:120px;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+color:#7CFFB2;
+}
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+
+var swiper = new Swiper(".mySwiper", {
+loop:true,
+pagination:{
+el:".swiper-pagination",
+clickable:true
+},
+navigation:{
+nextEl:".swiper-button-next",
+prevEl:".swiper-button-prev"
+}
+});
+
+</script>
+
+<section style="max-width:1100px;margin:auto;padding:40px 20px;">
+
+<h2 style="text-align:center;margin-bottom:25px;">
+<i class="fa-solid fa-gamepad icon"></i>Галерея гри
+</h2>
+
+<div class="swiper gameSwiper">
+
+<div class="swiper-wrapper">
+
+<div class="swiper-slide game-card"></div>
+<div class="swiper-slide game-card"></div>
+<div class="swiper-slide game-card"></div>
+<div class="swiper-slide game-card"></div>
+<div class="swiper-slide game-card"></div>
+
+</div>
+
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+
+</div>
+
+</section>
+
+
