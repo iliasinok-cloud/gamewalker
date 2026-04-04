@@ -3,252 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ant Unity Game</title>
-
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: "Segoe UI", sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:"PT Serif", serif;}
 
 body{
-
-background-image:
-linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
-url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
-
+background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
 background-size:cover;
 background-attachment:fixed;
 color:white;
 line-height:1.6;
-
 }
 
-.container{
-
-max-width:1100px;
-margin:auto;
-padding:60px 20px;
-
+/* NAV */
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:center;
+gap:40px;
+padding:20px;
+z-index:1000;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
 }
+
+nav button{
+background:none;
+border:none;
+color:#7CFFB2;
+font-size:18px;
+cursor:pointer;
+}
+
+nav button:hover{color:#32a852;}
+
+.tab{display:none;}
+.tab.active{display:block;}
+
+.container{max-width:1100px;margin:auto;padding:140px 20px 40px;}
 
 section{
-
 background:rgba(0,0,0,0.55);
 backdrop-filter: blur(8px);
-
 padding:40px;
 border-radius:15px;
-
 margin-bottom:40px;
-
 box-shadow:0 10px 25px rgba(0,0,0,0.6);
-
 }
 
 h1,h2{
-
 margin-bottom:20px;
-
 background:linear-gradient(90deg,#7CFFB2,#32a852);
 -webkit-background-clip:text;
 color:transparent;
-
 }
 
-h1{
-font-size:42px;
-}
+h1{font-size:42px;}
+h2{font-size:36px;}
 
-h2{
-font-size:36px;
-}
+p{font-size:19px;margin-bottom:15px;}
 
-p{
-font-size:19px;
-margin-bottom:15px;
-}
+.image{text-align:center;margin-top:20px;}
+.image img{max-width:100%;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,0.8);} 
 
-.image{
+ul{margin-top:10px;padding-left:20px;font-size:18px;}
+li{margin-bottom:10px;}
 
-text-align:center;
-margin-top:20px;
-
-}
-
-.image img{
-
-max-width:100%;
-border-radius:10px;
-
-box-shadow:0 10px 25px rgba(0,0,0,0.8);
-
-}
-
-ul{
-
-margin-top:10px;
-padding-left:20px;
-font-size:18px;
-
-}
-
-li{
-
-margin-bottom:10px;
-
-}
-
-.icon{
-
-color:#7CFFB2;
-margin-right:10px;
-
-}
-
-.highlight{
-
-font-size:34px;
-
-}
-
-.heart{
-
-color:#ff4d6d;
-
-}
-
-footer{
-
-text-align:center;
-padding:20px;
-opacity:0.7;
-font-size:14px;
-
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<section>
-
-<h1><i class="fa-solid fa-tree icon"></i>Сюжет та атмосфера</h1>
-
-<p>
-Світ людей зник під товщею гігантських джунглів. Залишки людської цивілізації —
-це іржаві консервні банки, що стали фортецями, та старі кросівки,
-які перетворилися на гори.
-</p>
-
-<p>
-Самотня мураха-скаут вирушає у небезпечну подорож крізь хащі,
-щоб відшукати розрізнені мурашники та об'єднати їх.
-Бо лише разом можна пережити «Велику Посуху» або напад хижаків.
-</p>
-
-<div class="image">
-<img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff">
-</div>
-
-</section>
-
-
-<section>
-
-<h2><i class="fa-solid fa-dice icon"></i>Механіка гри</h2>
-
-<p>
-Це ходілка (Roll & Move), посилена механікою
-<strong>Resource Management</strong> та <strong>Card Play</strong>.
-</p>
-
-<p>
-<strong>Ігрове поле:</strong> Звивиста стежка через джунглі,
-розділена на сектори (Покинутий сад, Затоплений гараж, Гнилий стовбур).
-</p>
-
-<p>
-<strong>Мета:</strong> Дійти до фінального Мурашника-Столиці,
-зібравши «Жетони Єдності».
-</p>
-
-</section>
-
-
-<section>
-
-<h2 class="highlight">
-<i class="fa-solid fa-people-group icon"></i>
-«В об'єднанні — сила»
-<span class="heart">❤</span>
-</h2>
-
-<p>
-Гравець не просто йде сам. Коли він проходить повз міні-поселення,
-він приєднує до себе мурах-помічників.
-</p>
-
-<ul>
-
-<li>
-<i class="fa-solid fa-ant icon"></i>
-Більше мурах у команді = легше проходити перешкоди
-(+1 до кидка кубика за союзника).
-</li>
-
-<li>
-<i class="fa-solid fa-handshake icon"></i>
-Кооператив: гравці можуть ділитися картками ресурсів,
-якщо знаходяться поруч.
-</li>
-
-</ul>
-
-</section>
-
-</div>
-
-</body>
-</html>
-
-<!-- Swiper -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-<section style="max-width:1100px;margin:auto;padding:40px 20px;">
-
-<div class="swiper mySwiper">
-
-<div class="swiper-wrapper">
-
-<div class="swiper-slide">Порада: Збирай союзників щоб збільшити силу колонії</div>
-
-<div class="swiper-slide">Сектор: Покинутий сад — багато ресурсів але є хижаки</div>
-
-<div class="swiper-slide">Карта подій може змінити весь маршрут</div>
-
-<div class="swiper-slide">Фінальна ціль: Мурашник-Столиця</div>
-
-</div>
-
-<div class="swiper-button-next"></div>
-<div class="swiper-button-prev"></div>
-<div class="swiper-pagination"></div>
-
-</div>
-
-</section>
-
-<style>
+.icon{color:#7CFFB2;margin-right:10px;}
+.highlight{font-size:34px;}
+.heart{color:#ff4d6d;}
 
 .swiper{
 margin-top:40px;
@@ -267,53 +97,196 @@ height:120px;
 }
 
 .swiper-button-next,
-.swiper-button-prev{
-color:#7CFFB2;
+.swiper-button-prev{color:#7CFFB2;}
+
+.coming{
+text-align:center;
+font-size:34px;
+padding:100px 0;
+opacity:0.8;
+}
+
+
+
+/* INSTAGRAM BADGE */
+.instagram-badge{
+position:fixed;
+top:10px;
+right:15px;
+z-index:1100;
+display:flex;
+align-items:center;
+gap:8px;
+padding:6px 10px;
+border-radius:40px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+color:#fff;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
+transition:0.3s;
+}
+
+.instagram-badge:hover{
+transform:scale(1.05);
+background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);
+}
+
+.instagram-badge i{
+font-size:14px;
+}
+
+.instagram-badge span{
+font-size:14px;
+}
+
+.instagram-badge:hover{
+transform:scale(1.05);
+background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);
+}
+
+.instagram-badge i{
+font-size:18px;
 }
 
 </style>
+</head>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<body>
 
-<script>
+<a href="#" class="instagram-badge">
+<i class="fa-brands fa-instagram"></i>
+<span>Instagram</span>
+</a>
 
-var swiper = new Swiper(".mySwiper", {
-loop:true,
-pagination:{
-el:".swiper-pagination",
-clickable:true
-},
-navigation:{
-nextEl:".swiper-button-next",
-prevEl:".swiper-button-prev"
-}
-});
+<nav>
+<button onclick="openTab('home')">Головна</button>
+<button onclick="openTab('buy')">Купити</button>
+<button onclick="openTab('story')">Історія</button>
+</nav>
 
-</script>
+<div class="container">
 
-<section style="max-width:1100px;margin:auto;padding:40px 20px;">
+<!-- HOME FULL ORIGINAL -->
+<div id="home" class="tab active">
 
+<section>
+<h1><i class="fa-solid fa-tree icon"></i>Сюжет та атмосфера</h1>
+
+<p>
+Світ людей зник під товщею гігантських джунглів. Залишки людської цивілізації —
+це іржаві консервні банки, що стали фортецями, та старі кросівки,
+які перетворилися на гори.
+</p>
+
+<p>
+Самотня мураха-скаут вирушає у небезпечну подорож крізь хащі,
+щоб відшукати розрізнені мурашники та об'єднати їх.
+Бо лише разом можна пережити «Велику Посуху» або напад хижаків.
+</p>
+
+<div class="image">
+<img src="04a4756f-ee67-4bca-881b-0a385c63c83e.png">
+</div>
+
+</section>
+
+<section>
+<h2><i class="fa-solid fa-dice icon"></i>Механіка гри</h2>
+
+<p>
+Це ходілка (Roll & Move), посилена механікою
+<strong>Resource Management</strong> та <strong>Card Play</strong>.
+</p>
+
+<p><strong>Ігрове поле:</strong> Звивиста стежка через джунглі.</p>
+<p><strong>Мета:</strong> Дійти до фінального Мурашника-Столиці.</p>
+
+</section>
+
+<section>
+<h2 class="highlight">
+<i class="fa-solid fa-people-group icon"></i>
+«В об'єднанні — сила» <span class="heart">❤</span>
+</h2>
+
+<ul>
+<li><i class="fa-solid fa-ant icon"></i>Більше мурах у команді = бонус</li>
+<li><i class="fa-solid fa-handshake icon"></i>Кооператив між гравцями</li>
+</ul>
+
+</section>
+
+<!-- SWIPER TIPS -->
+<section style="padding-top:20px;">
+<h2 style="text-align:center;margin-bottom:10px; font-size:28px;">
+<i class="fa-solid fa-lightbulb icon"></i>Поради
+</h2>
+
+<div class="swiper mySwiper">
+<div class="swiper-wrapper">
+<div class="swiper-slide">Порада: Збирай союзників щоб збільшити силу колонії</div>
+<div class="swiper-slide">Сектор: Покинутий сад — ресурси + небезпека</div>
+<div class="swiper-slide">Карта подій може змінити маршрут</div>
+<div class="swiper-slide">Фінальна ціль: Мурашник-Столиця</div>
+</div>
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+<div class="swiper-pagination"></div>
+</div>
+</section>
+
+<!-- GAME GALLERY -->
+<section>
 <h2 style="text-align:center;margin-bottom:25px;">
 <i class="fa-solid fa-gamepad icon"></i>Галерея гри
 </h2>
 
 <div class="swiper gameSwiper">
-
 <div class="swiper-wrapper">
-
-<div class="swiper-slide game-card"></div>
-<div class="swiper-slide game-card"></div>
-<div class="swiper-slide game-card"></div>
-<div class="swiper-slide game-card"></div>
-<div class="swiper-slide game-card"></div>
-
+<div class="swiper-slide">Скрін 1</div>
+<div class="swiper-slide">Скрін 2</div>
+<div class="swiper-slide">Скрін 3</div>
+<div class="swiper-slide">Скрін 4</div>
 </div>
-
 <div class="swiper-button-next"></div>
 <div class="swiper-button-prev"></div>
+</div>
+</section>
 
 </div>
 
-</section>
+<!-- BUY -->
+<div id="buy" class="tab">
+<section><div class="coming">Coming Soon...</div></section>
+</div>
 
+<!-- STORY -->
+<div id="story" class="tab">
+<section><div class="coming">Coming Soon...</div></section>
+</div>
 
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+function openTab(tabId){
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+document.getElementById(tabId).classList.add('active');
+}
+
+new Swiper(".mySwiper", {
+loop:true,
+pagination:{el:".swiper-pagination",clickable:true},
+navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}
+});
+
+new Swiper(".gameSwiper", {
+loop:true,
+navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}
+});
+</script>
+
+</body>
+</html>
