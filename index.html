@@ -13,7 +13,7 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:"PT Serif", serif;}
 
 body{
-background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+background-image:url(bg.jpg);
 background-size:cover;
 background-attachment:fixed;
 color:white;
@@ -137,8 +137,8 @@ ul{margin-top:10px;padding-left:20px;font-size:18px;}li{margin-bottom:10px;}
 <script>
 function openTab(tabId){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById(tabId).classList.add('active');}
 
-new Swiper(".mySwiper", {loop:true,pagination:{el:".swiper-pagination",clickable:true},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});
-new Swiper(".gallery", {loop:true,navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});
+new Swiper(".gallery", {loop:true,pagination:{el:".swiper-pagination",clickable:true},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});
+new Swiper(".gameSwiper", {loop:true,navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});
 
 const sections = document.querySelectorAll('section');
 const observer = new IntersectionObserver(entries=>{
