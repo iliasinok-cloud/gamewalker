@@ -138,7 +138,7 @@ ul{margin-top:10px;padding-left:20px;font-size:18px;}li{margin-bottom:10px;}
 function openTab(tabId){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById(tabId).classList.add('active');}
 
 new Swiper(".mySwiper", {loop:true,pagination:{el:".swiper-pagination",clickable:true},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});
-new Swiper(".gameSwiper", {loop:true,navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});
+new Swiper(".gallery", {loop:true,navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});
 
 const sections = document.querySelectorAll('section');
 const observer = new IntersectionObserver(entries=>{
