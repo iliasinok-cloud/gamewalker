@@ -263,6 +263,7 @@ document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
 document.getElementById(tabId).classList.add('active');
 }
 
+<<<<<<< HEAD
 /* Поради */
 new Swiper(".tipSwiper",{
 loop:true,
@@ -295,6 +296,15 @@ breakpoints:{
 768:{slidesPerView:2},
 1024:{slidesPerView:3}
 }
+=======
+new Swiper(".someSwiper", {loop:true,pagination:{el:".swiper-pagination",clickable:true},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});
+new Swiper(".gameSwiper", {loop:true,navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"}});
+
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('visible');}
+>>>>>>> 05f8448be4c797f26d001553947c6e2b8d575fd0
 });
 </script>
 
