@@ -10,151 +10,237 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 <style>
-body{
-margin:0;
-font-family:'PT Serif',serif;
-background:
-linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
-url('bg.jpg') center/cover fixed;
-color:white;
+#preloader {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: #111;
+z-index: 9999;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: opacity .5s, visibility .5s;
 }
 
-header{
-background:#111;
-padding:15px;
-position:sticky;
-top:0;
+.preloader-gif {
+width: 180px;
+height: auto;
+object-fit: contain;
 }
 
-nav{
-display:flex;
-justify-content:center;
-gap:10px;
+body {
+margin: 0;
+font-family: 'PT Serif', serif;
+color: white;
+perspective: 1500px;
+background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.75)), url('bg.jpg') center/cover fixed;
 }
 
-nav button{
-padding:10px 20px;
-border:none;
-border-radius:20px;
-background:#2d3b33;
-color:white;
-cursor:pointer;
+header {
+position: sticky;
+top: 0;
+background: #111;
+padding: 12px;
+z-index: 100;
+}
+
+nav {
+display: flex;
+justify-content: center;
+gap: 10px;
+}
+
+nav button {
+padding: 10px 18px;
+border: none;
+border-radius: 20px;
+background: #2d3b33;
+color: white;
+cursor: pointer;
+transition: transform .3s, background .3s;
 }
 
 nav button.active,
-nav button:hover{
-background:gold;
-color:black;
+nav button:hover {
+background: gold;
+color: black;
+transform: scale(1.08);
 }
 
-.page{
-max-width:1200px;
-margin:auto;
-padding:20px;
+.page {
+max-width: 1100px;
+margin: auto;
+padding: 20px;
 }
 
-.hero{
-text-align:center;
-padding:40px 20px;
+.hero {
+text-align: center;
+padding: 40px 10px;
 }
 
-.hero h1{
-font-size:50px;
-color:gold;
+.hero h1 {
+font-size: 45px;
+color: gold;
+margin-bottom: 10px;
+transition: transform .3s;
 }
 
-.hero p{
-max-width:700px;
-margin:auto;
+.hero h1:hover {
+transform: scale(1.08);
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 20px;
 }
 
-.panel{
-background:rgba(20,20,20,.85);
-padding:20px;
-border-radius:20px;
+.panel {
+background: rgba(20,20,20,.85);
+padding: 20px;
+border-radius: 16px;
 }
 
-.panel h1,
-.panel h2{
-color:gold;
+.hero-image {
+width: 100%;
+border-radius: 12px;
+margin-top: 10px;
 }
 
-.hero-image{
-width:100%;
-border-radius:15px;
-margin-top:10px;
+.feature-list {
+padding-left: 18px;
 }
 
-.feature-list{
-padding-left:20px;
+.tab {
+display: none;
 }
 
-.swiper{
-margin-top:15px;
+.tab.active {
+display: block;
 }
 
-.swiper-slide{
-background:#2d3b33;
-padding:15px;
-border-radius:15px;
-text-align:center;
+.parallax-card {
+transition: transform .15s ease-out, box-shadow .3s;
+transform-style: preserve-3d;
+will-change: transform;
 }
 
-.swiper-slide img{
-width:100%;
-height:420px;
-object-fit:contain;
-background:#d8d3b2;
-border-radius:10px;
+.parallax-card:hover {
+box-shadow: 0 20px 40px rgba(255, 215, 0, .25);
+z-index: 5;
 }
 
-.tab{
-display:none;
+.parallax-card h1,
+.parallax-card h2 {
+color: gold;
+transform: translateZ(30px);
 }
 
-.tab.active{
-display:block;
+.parallax-card p,
+.parallax-card ul,
+.parallax-card img,
+.parallax-card .swiper {
+transform: translateZ(20px);
 }
 
-.coming{
-text-align:center;
-font-size:35px;
-padding:80px 0;
-color:gold;
+.swiper {
+width: 100%;
+margin-top: 15px;
 }
 
-.instagram{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#E1306C;
-color:white;
-padding:12px 18px;
-border-radius:30px;
-text-decoration:none;
+.swiper-slide {
+background: #2d3b33;
+border-radius: 12px;
+padding: 10px;
+text-align: center;
+box-sizing: border-box;
 }
 
-footer{
-text-align:center;
-padding:30px;
-color:#ccc;
+.tipSwiper .swiper-slide {
+padding: 20px 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 80px;
+font-size: 18px;
+font-weight: bold;
 }
 
-@media(max-width:768px){
-.hero h1{
-font-size:35px;
+.gameSwiper {
+position: relative;
+padding: 0 40px;
+box-sizing: border-box;
 }
+
+.gameSwiper .swiper-slide img {
+width: 100%;
+height: 360px;
+object-fit: contain;
+background: #d8d3b2;
+border-radius: 10px;
+display: block;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+color: white;
+}
+
+.gameSwiper .swiper-button-prev {
+left: 10px;
+}
+
+.gameSwiper .swiper-button-next {
+right: 10px;
+}
+
+.coming {
+text-align: center;
+font-size: 30px;
+padding: 70px 0;
+color: gold;
+}
+
+.instagram {
+position: fixed;
+right: 20px;
+bottom: 20px;
+background: #E1306C;
+color: white;
+padding: 12px 18px;
+border-radius: 30px;
+text-decoration: none;
+z-index: 99;
+transition: transform .3s, background .3s;
+}
+
+.instagram:hover {
+transform: scale(1.15);
+background: #b12554;
+}
+
+footer {
+text-align: center;
+padding: 30px;
+color: #ccc;
 }
 </style>
+
+<script>
+window.tS = Date.now();
+</script>
 </head>
 
 <body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <video class="preloader-gif" autoplay muted loop playsinline>
+    <source src="preloader.gif.mp4" type="video/mp4">
+  </video>
+</div>
 
 <header>
 <nav>
@@ -168,112 +254,63 @@ font-size:35px;
 
 <section class="hero">
 <h1>Шлях до своїх</h1>
-
-<p>
-Приєднуйтесь до пригоди мурах-скаутів у світі джунглів,
-де єдність — це сила.
-</p>
+<p>Приєднуйтесь до пригоди мурах-скаутів у світі джунглів.</p>
 </section>
 
 <section id="home" class="tab active">
 
 <div class="grid">
 
-<div class="panel">
-<h1><i class="fa-solid fa-tree"></i> Сюжет</h1>
-
-<p>
-Світ людей зник під товщею гігантських джунглів.
-Самотня мураха вирушає до Мурашника-Столиці.
-</p>
-
+<div class="panel parallax-card">
+<h2><i class="fa-solid fa-tree"></i> Сюжет</h2>
+<p>Світ людей зник під джунглями. Мураха йде до столиці.</p>
 <img src="Group 75.png" class="hero-image">
 </div>
 
-<div class="panel">
+<div class="panel parallax-card">
 <h2><i class="fa-solid fa-dice"></i> Механіка</h2>
-
-<p>
-Ходілка з елементами Resource Management та Card Play.
-</p>
-
-<p>
-Збирайте ресурси, союзників і проходьте небезпечні сектори.
-</p>
+<p>Resource Management + Card Play.</p>
 </div>
 
-<div class="panel">
-<h2><i class="fa-solid fa-people-group"></i> Командна гра</h2>
-
+<div class="panel parallax-card">
+<h2><i class="fa-solid fa-people-group"></i> Команда</h2>
 <ul class="feature-list">
-<li>Більше мурах = більше сили</li>
-<li>Кооперація між гравцями</li>
+<li>Більше мурах = сильніше</li>
+<li>Кооперація гравців</li>
 </ul>
-
-</div>
 </div>
 
-<div class="panel" style="margin-top:20px">
+</div>
 
-<h2><i class="fa-solid fa-lightbulb"></i> Поради</h2>
+<div class="panel parallax-card" style="margin-top:20px">
+<h2>Поради</h2>
 
 <div class="swiper tipSwiper">
 <div class="swiper-wrapper">
-
-<div class="swiper-slide">
-Збирай союзників для бонусів
-</div>
-
-<div class="swiper-slide">
-Досліджуй покинутий сад
-</div>
-
-<div class="swiper-slide">
-Карти подій змінюють маршрут
-</div>
-
-<div class="swiper-slide">
-Досягни Мурашника-Столиці
-</div>
-
-</div>
+<div class="swiper-slide">Збирай союзників</div>
+<div class="swiper-slide">Досліджуй локації</div>
+<div class="swiper-slide">Карти змінюють гру</div>
 </div>
 </div>
 
-<div class="panel" style="margin-top:20px">
+</div>
 
-<h2><i class="fa-solid fa-gamepad"></i> Галерея</h2>
+<div class="panel parallax-card" style="margin-top:20px">
+<h2>Галерея</h2>
 
 <div class="swiper gameSwiper">
-
 <div class="swiper-wrapper">
-
-<div class="swiper-slide">
-<img src="Group23.jpg">
-</div>
-
-<div class="swiper-slide">
-<img src="Group24.jpg">
-</div>
-
-<div class="swiper-slide">
-<img src="Group25.jpg">
-</div>
-
-<div class="swiper-slide">
-<img src="Group22.jpg">
-</div>
-
-<div class="swiper-slide">
-<img src="Group21.jpg">
-</div>
-
+<div class="swiper-slide"><img src="Group23.jpg"></div>
+<div class="swiper-slide"><img src="Group24.jpg"></div>
+<div class="swiper-slide"><img src="Group25.jpg"></div>
+<div class="swiper-slide"><img src="Group22.jpg"></div>
+<div class="swiper-slide"><img src="Group21.jpg"></div>
 </div>
 
 <div class="swiper-button-prev"></div>
 <div class="swiper-button-next"></div>
-
 </div>
+
 </div>
 
 </section>
@@ -286,62 +323,105 @@ font-size:35px;
 
 <section id="story" class="tab">
 <div class="panel">
-<p class="coming">Історія скоро буде додана...</p>
+<p class="coming">Історія скоро буде...</p>
 </div>
 </section>
 
 </main>
 
-<a href="https://www.instagram.com/shliah_do_svoih/?g=5"
-target="_blank"
-class="instagram">
+<a href="https://www.instagram.com/shliah_do_svoih/?g=5" target="_blank" class="instagram">
 <i class="fa-brands fa-instagram"></i> Instagram
 </a>
 
-<footer>
-© 2026 Шлях до своїх
-</footer>
+<footer>© 2026 Шлях до своїх</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-function openTab(id,btn){
+window.addEventListener('load', () => {
 
-document.querySelectorAll('.tab').forEach(tab=>{
-tab.classList.remove('active');
+setTimeout(() => {
+
+const p = document.getElementById('preloader');
+
+p.style.opacity = '0';
+p.style.visibility = 'hidden';
+
+setTimeout(() => {
+p.remove();
+}, 500);
+
+}, Math.max(0, 1000 - (Date.now() - window.tS)));
+
+});
+
+function openTab(id, btn) {
+
+document.querySelectorAll('.tab').forEach(t => {
+t.classList.remove('active');
 });
 
 document.getElementById(id).classList.add('active');
 
-document.querySelectorAll('nav button').forEach(button=>{
-button.classList.remove('active');
+document.querySelectorAll('nav button').forEach(b => {
+b.classList.remove('active');
 });
 
 btn.classList.add('active');
 }
 
-new Swiper('.tipSwiper',{
-loop:true,
-autoplay:{
-delay:2800
+const swiperOptions = {
+loop: true,
+observer: true,
+observeParents: true
+};
+
+new Swiper('.tipSwiper', {
+...swiperOptions,
+autoplay: {
+delay: 2500
 },
-slidesPerView:1
+slidesPerView: 1
 });
 
-new Swiper('.gameSwiper',{
-loop:true,
-spaceBetween:20,
+new Swiper('.gameSwiper', {
+...swiperOptions,
+spaceBetween: 20,
+slidesPerView: 1,
 
-navigation:{
-nextEl:'.swiper-button-next',
-prevEl:'.swiper-button-prev'
+navigation: {
+nextEl: '.swiper-button-next',
+prevEl: '.swiper-button-prev'
 },
 
-breakpoints:{
-0:{slidesPerView:1},
-768:{slidesPerView:2},
-1100:{slidesPerView:3}
+breakpoints: {
+768: {
+slidesPerView: 2
+},
+1100: {
+slidesPerView: 3
 }
+}
+});
+
+document.querySelectorAll('.parallax-card').forEach(card => {
+
+card.addEventListener('mousemove', (e) => {
+
+const r = card.getBoundingClientRect();
+
+const x = (e.clientX - r.left) / r.width - 0.5;
+const y = (e.clientY - r.top) / r.height - 0.5;
+
+card.style.transform =
+`scale(1.05) rotateX(${(y * 12).toFixed(2)}deg) rotateY(${(-x * 12).toFixed(2)}deg)`;
+
+});
+
+card.addEventListener('mouseleave', () => {
+card.style.transform = 'scale(1) rotateX(0deg) rotateY(0deg)';
+});
+
 });
 </script>
 
