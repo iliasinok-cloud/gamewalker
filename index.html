@@ -3,169 +3,345 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ant Unity Game</title>
+<title>Шлях до своїх</title>
 
-<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-</head>
-<body>
 
-<<<<<<< HEAD
-<header class="site-header">
-    <nav class="site-nav">
-        <button onclick="openTab('home')">Головна</button>
-        <button onclick="openTab('buy')">Купити</button>
-        <button onclick="openTab('story')">Історія</button>
-    </nav>
-</header>
-
-=======
-<header>
-    <nav>
-        <a href=""></a>
-        <a href=""></a>
-        <a href=""></a>
-    </nav>
-</header>
-
-<main>
-    <section class="hero">
-        <h1>Ant Unity Game</h1>
-        <p>Приєднуйтесь до пригоди мурах-скаутів у світі, де єдність — це сила!</p> 
-        <a href="#home" class="btn">Дізнатися більше</a>
-     </section>
-</main>
-
-<footer>
-    <p>&copy; 2024 Ant Unity Game. All rights reserved.</p>
-</footer>    
-    
-
->>>>>>> 28251e6e6e110c91b9064769d9c2a0fee555d71d
-<a href="#" class="instagram-badge">
-    <i class="fa-brands fa-instagram"></i>
-    <span>Instagram</span>
-</a>
-
-<main class="page">
-    <section id="home" class="tab active">
-        <article class="panel story-panel">
-            <h1><i class="fa-solid fa-tree icon"></i>Сюжет та атмосфера</h1>
-            <p>Світ людей зник під товщею гігантських джунглів...</p>
-            <p>Самотня мураха-скаут вирушає у небезпечну подорож...</p>
-            <figure class="hero-card">
-                <img src="Group 75.png" alt="Центральне зображення Ant Unity Game" class="hero-image">
-            </figure>
-        </article>
-
-        <article class="panel">
-            <h2><i class="fa-solid fa-dice icon"></i>Механіка гри</h2>
-            <p>Це ходілка (Roll & Move), посилена механікою <strong>Resource Management</strong> та <strong>Card Play</strong>.</p>
-            <p><strong>Ігрове поле:</strong> Звивиста стежка через джунглі.</p>
-            <p><strong>Мета:</strong> Дійти до фінального Мурашника-Столиці.</p>
-        </article>
-
-        <article class="panel">
-            <h2 class="highlight">
-                <i class="fa-solid fa-people-group icon"></i>
-                «В об'єднанні — сила»
-                <span class="heart">❤</span>
-            </h2>
-            <ul class="feature-list">
-                <li><i class="fa-solid fa-ant icon"></i>Більше мурах у команді = бонус</li>
-                <li><i class="fa-solid fa-handshake icon"></i>Кооператив між гравцями</li>
-            </ul>
-        </article>
-
-        <article class="panel">
-            <h2 class="section-title tips-title">
-                <i class="fa-solid fa-lightbulb icon"></i>Поради
-            </h2>
-            <section class="swiper tipSwiper">
-                <ul class="swiper-wrapper">
-                    <li class="swiper-slide">Порада: Збирай союзників, щоб збільшити силу колонії</li>
-                    <li class="swiper-slide">Сектор: Покинутий сад — ресурси + небезпека</li>
-                    <li class="swiper-slide">Карта подій може змінити маршрут</li>
-                    <li class="swiper-slide">Фінальна ціль: Мурашник-Столиця</li>
-                </ul>
-                <button class="swiper-button-prev tip-prev" type="button" aria-label="Попередня порада"></button>
-                <button class="swiper-button-next tip-next" type="button" aria-label="Наступна порада"></button>
-                <section class="swiper-pagination tip-pagination" aria-label="Навігація слайдера"></section>
-            </section>
-        </article>
-
-        <article class="panel">
-            <h2 class="section-title gallery-title">
-                <i class="fa-solid fa-gamepad icon"></i>Галерея карток
-            </h2>
-            <section class="swiper gameSwiper">
-                <ul class="swiper-wrapper">
-                    <li class="swiper-slide"><img src="Group23.jpg" alt="Картка 1"></li>
-                    <li class="swiper-slide"><img src="Group24.jpg" alt="Картка 2"></li>
-                    <li class="swiper-slide"><img src="Group25.jpg" alt="Картка 3"></li>
-                    <li class="swiper-slide"><img src="Group22.jpg" alt="Картка 4"></li>
-                    <li class="swiper-slide"><img src="Group21.jpg" alt="Картка 5"></li>
-                    <li class="swiper-slide"><img src="Group20.jpg" alt="Картка 6"></li>
-                    <li class="swiper-slide"><img src="Group19.jpg" alt="Картка 7"></li>
-                </ul>
-                <button class="swiper-button-prev game-prev" type="button" aria-label="Попередня картка"></button>
-                <button class="swiper-button-next game-next" type="button" aria-label="Наступна картка"></button>
-            </section>
-        </article>
-    </section>
-
-    <section id="buy" class="tab">
-        <article class="panel">
-            <p class="coming">Coming Soon...</p>
-        </article>
-    </section>
-
-    <section id="story" class="tab">
-        <article class="panel">
-            <p class="coming">Coming Soon...</p>
-        </article>
-    </section>
-</main>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-function openTab(tabId) {
-    document.querySelectorAll('.tab').forEach((tab) => tab.classList.remove('active'));
-    document.getElementById(tabId).classList.add('active');
+<style>
+body{
+margin:0;
+font-family:'PT Serif',serif;
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
+url('bg.jpg') center/cover fixed;
+color:white;
 }
 
-new Swiper('.tipSwiper', {
-    loop: true,
-    autoplay: {
-        delay: 3500,
-        disableOnInteraction: false
-    },
-    pagination: {
-        el: '.tip-pagination',
-        clickable: true
-    },
-    navigation: {
-        nextEl: '.tip-next',
-        prevEl: '.tip-prev'
-    }
+header{
+background:#111;
+padding:15px;
+position:sticky;
+top:0;
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:10px;
+}
+
+nav button{
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:#2d3b33;
+color:white;
+cursor:pointer;
+}
+
+nav button.active,
+nav button:hover{
+background:gold;
+color:black;
+}
+
+.page{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+.hero{
+text-align:center;
+padding:40px 20px;
+}
+
+.hero h1{
+font-size:50px;
+color:gold;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.panel{
+background:rgba(20,20,20,.85);
+padding:20px;
+border-radius:20px;
+}
+
+.panel h1,
+.panel h2{
+color:gold;
+}
+
+.hero-image{
+width:100%;
+border-radius:15px;
+margin-top:10px;
+}
+
+.feature-list{
+padding-left:20px;
+}
+
+.swiper{
+margin-top:15px;
+}
+
+.swiper-slide{
+background:#2d3b33;
+padding:15px;
+border-radius:15px;
+text-align:center;
+}
+
+.swiper-slide img{
+width:100%;
+height:420px;
+object-fit:contain;
+background:#d8d3b2;
+border-radius:10px;
+}
+
+.tab{
+display:none;
+}
+
+.tab.active{
+display:block;
+}
+
+.coming{
+text-align:center;
+font-size:35px;
+padding:80px 0;
+color:gold;
+}
+
+.instagram{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#E1306C;
+color:white;
+padding:12px 18px;
+border-radius:30px;
+text-decoration:none;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#ccc;
+}
+
+@media(max-width:768px){
+.hero h1{
+font-size:35px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<button class="active" onclick="openTab('home',this)">Головна</button>
+<button onclick="openTab('buy',this)">Купити</button>
+<button onclick="openTab('story',this)">Історія</button>
+</nav>
+</header>
+
+<main class="page">
+
+<section class="hero">
+<h1>Шлях до своїх</h1>
+
+<p>
+Приєднуйтесь до пригоди мурах-скаутів у світі джунглів,
+де єдність — це сила.
+</p>
+</section>
+
+<section id="home" class="tab active">
+
+<div class="grid">
+
+<div class="panel">
+<h1><i class="fa-solid fa-tree"></i> Сюжет</h1>
+
+<p>
+Світ людей зник під товщею гігантських джунглів.
+Самотня мураха вирушає до Мурашника-Столиці.
+</p>
+
+<img src="Group 75.png" class="hero-image">
+</div>
+
+<div class="panel">
+<h2><i class="fa-solid fa-dice"></i> Механіка</h2>
+
+<p>
+Ходілка з елементами Resource Management та Card Play.
+</p>
+
+<p>
+Збирайте ресурси, союзників і проходьте небезпечні сектори.
+</p>
+</div>
+
+<div class="panel">
+<h2><i class="fa-solid fa-people-group"></i> Командна гра</h2>
+
+<ul class="feature-list">
+<li>Більше мурах = більше сили</li>
+<li>Кооперація між гравцями</li>
+</ul>
+
+</div>
+</div>
+
+<div class="panel" style="margin-top:20px">
+
+<h2><i class="fa-solid fa-lightbulb"></i> Поради</h2>
+
+<div class="swiper tipSwiper">
+<div class="swiper-wrapper">
+
+<div class="swiper-slide">
+Збирай союзників для бонусів
+</div>
+
+<div class="swiper-slide">
+Досліджуй покинутий сад
+</div>
+
+<div class="swiper-slide">
+Карти подій змінюють маршрут
+</div>
+
+<div class="swiper-slide">
+Досягни Мурашника-Столиці
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="panel" style="margin-top:20px">
+
+<h2><i class="fa-solid fa-gamepad"></i> Галерея</h2>
+
+<div class="swiper gameSwiper">
+
+<div class="swiper-wrapper">
+
+<div class="swiper-slide">
+<img src="Group23.jpg">
+</div>
+
+<div class="swiper-slide">
+<img src="Group24.jpg">
+</div>
+
+<div class="swiper-slide">
+<img src="Group25.jpg">
+</div>
+
+<div class="swiper-slide">
+<img src="Group22.jpg">
+</div>
+
+<div class="swiper-slide">
+<img src="Group21.jpg">
+</div>
+
+</div>
+
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+
+</div>
+</div>
+
+</section>
+
+<section id="buy" class="tab">
+<div class="panel">
+<p class="coming">Coming Soon...</p>
+</div>
+</section>
+
+<section id="story" class="tab">
+<div class="panel">
+<p class="coming">Історія скоро буде додана...</p>
+</div>
+</section>
+
+</main>
+
+<a href="https://www.instagram.com/shliah_do_svoih/?g=5"
+target="_blank"
+class="instagram">
+<i class="fa-brands fa-instagram"></i> Instagram
+</a>
+
+<footer>
+© 2026 Шлях до своїх
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+function openTab(id,btn){
+
+document.querySelectorAll('.tab').forEach(tab=>{
+tab.classList.remove('active');
 });
 
-new Swiper('.gameSwiper', {
-    loop: true,
-    slidesPerView: 3,
-    slidesPerGroup: 1,
-    spaceBetween: 20,
-    navigation: {
-        nextEl: '.game-next',
-        prevEl: '.game-prev'
-    },
-    breakpoints: {
-        0: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 }
-    }
+document.getElementById(id).classList.add('active');
+
+document.querySelectorAll('nav button').forEach(button=>{
+button.classList.remove('active');
+});
+
+btn.classList.add('active');
+}
+
+new Swiper('.tipSwiper',{
+loop:true,
+autoplay:{
+delay:2800
+},
+slidesPerView:1
+});
+
+new Swiper('.gameSwiper',{
+loop:true,
+spaceBetween:20,
+
+navigation:{
+nextEl:'.swiper-button-next',
+prevEl:'.swiper-button-prev'
+},
+
+breakpoints:{
+0:{slidesPerView:1},
+768:{slidesPerView:2},
+1100:{slidesPerView:3}
+}
 });
 </script>
 
